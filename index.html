@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -13,49 +12,280 @@
     />
 
     <title>Frontend Mentor | Social proof section</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap');
+
+      *{
+        margin: 0;
+        padding: 0;
+        font-family: 'League Spartan', sans-serif;
+      }
+      body{
+        background-color: hsl(0, 0%, 100%);
+        position: relative;
+      }
+      body::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 232px;
+        background-image: url('images/bg-pattern-top-mobile.svg');
+        background-repeat: no-repeat;
+        pointer-events: none;
+      }
+      body::after{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 503px;
+        background-image: url('images/bg-pattern-bottom-mobile.svg');
+        background-repeat: no-repeat;
+        background-position: right bottom;
+        pointer-events: none;
+      }
+      main{
+        padding: 86px 40px;
+      }
+      .header{
+        text-align: center;
+      }
+      .header h1{
+        color: hsl(300, 43%, 22%);
+        font-size: 34px;
+        line-height: 28px;
+      }
+      .header p{
+        color: hsl(303, 10%, 53%);
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 20px;
+      }
+      .rating{
+        text-align: center;
+        margin: 34px 0;
+        margin-bottom: 40px;
+      }
+      .stars{
+        background-color: hsl(300, 24%, 96%);
+        padding: 12px 0;
+        margin-top: 14px;
+        border-radius: 6px;
+      }
+      .stars img{
+        width: 14px;
+        padding: 0 2px;
+      }
+      .stars strong{
+        display: block;
+        font-size: 14px;
+        color: hsl(300, 43%, 22%);
+        padding-top: 8px;
+      }
+      .buyer{
+        background-color: hsl(300, 43%, 22%);
+        padding: 28px;
+        border-radius: 6px;
+        margin-top: 14px;
+      }
+      .buyer img{
+        border-radius: 50%;
+        width: 40px;
+      }
+      .buyer h4{
+        color: hsl(0, 0%, 100%);
+        position: absolute;
+        margin-top: -40px;
+        margin-left: 56px;
+        font-size: 15px;
+      }
+      .buyer h5{
+        color: hsl(333, 80%, 67%);
+        font-weight: 500;
+        position: absolute;
+        margin-top: -18px;
+        margin-left: 56px;
+        font-size: 15px;
+      }
+      .buyer p{
+        font-size: 15px;
+        color: hsl(300, 24%, 96%);
+        line-height: 20px;
+        margin-top: 18px;
+      }
       .attribution {
         font-size: 11px;
         text-align: center;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      footer{
+        padding-bottom: 20px;
+      }
+
+      @media only screen and (min-width: 960px){
+        body{
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        body::before{
+          background-image: url('images/bg-pattern-top-desktop.svg');
+          width: 100%;
+          height: 362px;
+        }
+        body::after{
+          background-image: url('images/bg-pattern-bottom-desktop.svg');
+          height: 673px;
+        }
+        main{
+          display: grid;
+          grid-template-areas: 'left right''bottom bottom';
+          margin-top: -30px;
+          width: 1000px;
+        }
+        .header{
+          grid-area: left;
+          text-align: left;
+        }
+        .header h1{
+          font-size: 46px;
+          line-height: 40px;
+          width: 300px;
+        }
+        .header p{
+          width: 400px;
+          margin-top: 22px;
+        }
+        .rating{
+          grid-area: right;
+          text-align: left;
+          margin-top: 8px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+        }
+        .stars strong{
+          display: inline;
+          margin-left: -2px;
+        }
+        .stars span{
+          padding: 0 24px;
+        }
+        .stars img{
+          margin-bottom: -2px;
+        }
+        .stars{
+          width: 380px;
+          padding: 16px 0;
+        }
+        #stars-1{
+          margin-right: 80px;
+        }
+        #stars-2{
+          margin-right: 40px;
+        }
+        .reviews{
+          grid-area: bottom;
+          display: flex;
+          justify-content: space-between;
+          margin-top: 20px;
+        }
+        .buyer{
+          width: 260px;
+        }
+        #buyer-2{
+          margin-top: 30px;
+          margin-bottom: -16px;
+        }
+        #buyer-3{
+          margin-top: 45px;
+          margin-bottom: -31px;
+        }
+        footer{
+          position: absolute;
+          bottom: 0;
+        }
       }
     </style>
   </head>
   <body>
-    10,000+ of our users love our products.
+    <main>
+      <section class="header">
+        <h1>10,000+ of our users love our products.</h1>
+        <p>We only provide great products combined with excellent customer service.
+          See what our satisfied customers are saying about our services.</p>
+      </section>
 
-    We only provide great products combined with excellent customer service.
-    See what our satisfied customers are saying about our services.
-    
-    Rated 5 Stars in Reviews
-    Rated 5 Stars in Report Guru
-    Rated 5 Stars in BestTech
-    
-    Colton Smith 
-    Verified Buyer
-    "We needed the same printed design as the one we had ordered a week prior.
-    Not only did they find the original order, but we also received it in time.
-    Excellent!"
-    
-    Irene Roberts 
-    Verified Buyer
-    "Customer service is always excellent and very quick turn around. Completely
-    delighted with the simplicity of the purchase and the speed of delivery."
-    
-    Anne Wallace 
-    Verified Buyer
-    "Put an order with this company and can only praise them for the very high
-    standard. Will definitely use them again and recommend them to everyone!"
+      <section class="rating">
+        <div class="stars" id="stars-1">
+          <span>
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+          </span>
+          <strong>Rated 5 Stars in Reviews</strong>
+        </div>
+        <div class="stars" id="stars-2">
+          <span>
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+          </span>
+          <strong>Rated 5 Stars in Report Guru</strong>
+        </div>
+        <div class="stars" id="stars-3">
+          <span>
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+            <img src="images/icon-star.svg" alt="Star">
+          </span>
+          <strong>Rated 5 Stars in BestTech</strong>
+        </div>
+      </section>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+      <section class="reviews">
+        <div class="buyer" id="buyer-1">
+          <img src="images/image-colton.jpg" alt="Buyer Colton Smith Image">
+          <h4>Colton Smith</h4>
+          <h5>Verified Buyer</h5>
+          <p>&ldquo; We needed the same printed design as the one we had ordered a week prior.
+            Not only did they find the original order, but we also received it in time.
+            Excellent! &rdquo;</p>
+        </div>
+        <div class="buyer" id="buyer-2">
+          <img src="images/image-irene.jpg" alt="Buyer Irene Roberts Image">
+          <h4>Irene Roberts</h4>
+          <h5>Verified Buyer</h5>
+          <p>&ldquo; Customer service is always excellent and very quick turn around. Completely
+            delighted with the simplicity of the purchase and the speed of delivery. &rdquo;</p>
+        </div>
+        <div class="buyer" id="buyer-3">
+          <img src="images/image-anne.jpg" alt="Buyer Anne Wallace Image">
+          <h4>Anne Wallace</h4>
+          <h5>Verified Buyer</h5>
+          <p>&ldquo; Put an order with this company and can only praise them for the very high
+            standard. Will definitely use them again and recommend them to everyone! &rdquo;</p>
+        </div>
+      </section>
+    </main>
+    
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="https://www.linkedin.com/in/chamindudahanayaka/">Chamindu Dahanayaka</a>.
+    </footer>
   </body>
 </html>
